@@ -3,6 +3,7 @@ import {
   FlatList,
   View,
 } from 'react-native';
+import { connect } from 'react-redux';
 
 import WallCallengeDetail from './WallChallengeDetail';
 
@@ -67,4 +68,4 @@ const players = [
   }
 ];
 
-export default WallCallengeList;
+export default connect()(WallCallengeList);
