@@ -7,7 +7,8 @@
     "test": "jest",
     "android": "react-native run-android",
     "link": "react-native link",
-    "first-launch": "npm i && npm run link && npm run android"
+    "first-launch": "npm i && npm run link && npm run android",
+    "flow": "flow"
   },
   "dependencies": {
     "firebase": "^3.4.1",
@@ -20,13 +21,11 @@
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
+    "babel-cli": "6.26.0",
     "babel-jest": "22.2.2",
+    "babel-preset-flow": "6.23.0",
     "babel-preset-react-native": "4.0.0",
-    "eslint-config-rallycoding": "^3.2.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-react": "^7.6.1",
-    "eslint-plugin-react-native": "^3.2.1",
+    "flow-bin": "0.63.0",
     "jest": "22.3.0",
     "react-test-renderer": "16.2.0"
   },
