@@ -12,7 +12,7 @@ import { ReduxThunk } from 'redux-thunk';
 import Reducers from './reducers';
 import WallChallengeList from './components/wallChallengeList/WallChallengeList';
 
-export default class App extends Component {
+export default class App extends Component<{}> {
   render() {
     const store = createStore(Reducers, {}, applyMiddleware(ReduxThunk));
 
