@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import {
-  View,
-  StyleSheet,
-} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Body from './Body';
 import Header from './Header';
-import {
-  Card,
-} from '../common';
+import { Card } from '../common';
 
 class WallCallengeDetail extends Component {
   constructor(prop) {
@@ -30,13 +25,8 @@ class WallCallengeDetail extends Component {
     return (
       <View>
         <Card style={styles.card}>
-          <Header
-            sources={headerSource}
-          />
-          <Body
-            style={styles.body}
-            sources={bodySources}
-          />
+          <Header sources={headerSource} />
+          <Body style={styles.body} sources={bodySources} />
         </Card>
       </View>
     );
@@ -49,7 +39,7 @@ const styles = StyleSheet.create({
   },
   body: {
     marginTop: 10,
-  }
+  },
 });
 
 export default WallCallengeDetail;

@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import WallChallengeList from './components/wallChallengeList/WallChallengeList';
 
-export default class App extends Component {
+export default class App extends Component<{}> {
   render() {
     return (
       <View>
