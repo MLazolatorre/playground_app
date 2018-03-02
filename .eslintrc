@@ -48,7 +48,9 @@
     ],
     "flowtype/use-flow-type": 1,
     "flowtype/valid-syntax": 1,
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-plusplus": "off",
+    "no-use-before-define": ["error", { "variables": false }]
   },
   "settings": {
     "flowtype": {
