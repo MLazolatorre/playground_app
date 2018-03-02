@@ -1,37 +1,40 @@
-import React, { Component } from 'react';
+// @flow
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import Body from './Body';
 import Header from './Header';
 import { Card } from '../common';
 
-class WallCallengeDetail extends Component {
-  constructor(prop) {
-    super(prop);
-    this.state = {};
-  }
+type propsType = {
+  data: Array<{
+    name: string,
+    profilePicture: string,
+    nbLikes: number,
+    challengeImageDescription: string,
+  }>,
+};
 
-  render() {
-    const headerSource = this.props.data.map(x => ({
-      name: x.name,
-      profilePicture: x.profilePicture,
-    }));
+const WallCallengeDetail = (props: propsType) => {
+  const headerSource = props.data.map(x => ({
+    name: x.name,
+    profilePicture: x.profilePicture,
+  }));
 
-    const bodySources = this.props.data.map(x => ({
-      nbLikes: x.nbLikes,
-      challengeDescription: x.challengeDescription,
-    }));
+  const bodySources = props.data.map(x => ({
+    nbLikes: x.nbLikes,
+    challengeImageDescription: x.challengeImageDescription,
+  }));
 
-    return (
-      <View>
-        <Card style={styles.card}>
-          <Header sources={headerSource} />
-          <Body style={styles.body} sources={bodySources} />
-        </Card>
-      </View>
-    );
-  }
-}
+  return (
+    <View>
+      <Card style={styles.card}>
+        <Header sources={headerSource} />
+        <Body style={styles.body} sources={bodySources} />
+      </Card>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   card: {

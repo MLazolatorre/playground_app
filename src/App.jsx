@@ -4,7 +4,6 @@
  * @flow
  */
 
-<<<<<<< 0c6e7bd5b634910f096733ab1d91ef880dee97d7
 import React, { Component } from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -23,18 +22,6 @@ export default class App extends Component<{}> {
       </Provider>
     );
   }
-=======
-import React from 'react';
-import { View } from 'react-native';
-import WallChallengeList from './components/wallChallengeList/WallChallengeList';
-
-function App() {
-  return (
-    <View>
-      <WallChallengeList />
-    </View>
-  );
->>>>>>> fit App.jsx to flow rules
 }
 
 export default App;
