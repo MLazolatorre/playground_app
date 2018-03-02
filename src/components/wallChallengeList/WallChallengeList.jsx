@@ -4,21 +4,40 @@ import { FlatList, View } from 'react-native';
 
 import WallCallengeDetail from './WallChallengeDetail';
 
-import PictureProfile1 from '../../../img/devTest/PictureProfile1.jpg';
-import PictureProfile2 from '../../../img/devTest/PictureProfile2.jpg';
-import ChallDescription1 from '../../../img/devTest/ChallDescription1.jpg';
-import ChallDescription2 from '../../../img/devTest/ChallDescription2.jpg';
+const PictureProfile1 = '../../../img/devTest/PictureProfile1.jpg';
+const PictureProfile2 = '../../../img/devTest/PictureProfile2.jpg';
+const ChallDescription1 = '../../../img/devTest/ChallDescription1.jpg';
+const ChallDescription2 = '../../../img/devTest/ChallDescription2.jpg';
+
+type playerType = Array<{
+  name: string,
+  profilePicture: string,
+  nbLikes: number,
+  challengeImageDescription: string,
+}>;
+
+const players: playerType = [
+  {
+    name: 'Méloch',
+    profilePicture: PictureProfile1,
+    challengeImageDescription: ChallDescription1,
+    nbLikes: 180564,
+  },
+  {
+    name: 'Macron',
+    profilePicture: PictureProfile2,
+    challengeImageDescription: ChallDescription2,
+    nbLikes: 204564,
+  },
+];
 
 class WallCallengeList extends Component<{}> {
-  keyExtractor(item: any, index: number) {
+  keyExtractor(item: playerType, index: number) {
     return `${index}`;
   }
 
-  renderItem({ item }: data) {
-    console.log('item');
-    console.log(item);
-
-    return <WallCallengeDetail data={item} />;
+  renderItem(param: { item: playerType }) {
+    return <WallCallengeDetail data={param.item} />;
   }
 
   render() {
@@ -35,29 +54,5 @@ class WallCallengeList extends Component<{}> {
     );
   }
 }
-
-type data = {
-  item: Array<{
-    name: string,
-    profilePicture: any,
-    challengeDescription: any,
-    nbLikes: number,
-  }>,
-};
-
-const players = [
-  {
-    name: 'Méloch',
-    profilePicture: PictureProfile1,
-    challengeDescription: ChallDescription1,
-    nbLikes: 180564,
-  },
-  {
-    name: 'Macron',
-    profilePicture: PictureProfile2,
-    challengeDescription: ChallDescription2,
-    nbLikes: 204564,
-  },
-];
 
 export default WallCallengeList;
