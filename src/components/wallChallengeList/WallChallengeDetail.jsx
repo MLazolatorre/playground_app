@@ -27,8 +27,10 @@ type propsType = {
 
 const WallChallengeDetail = (props: propsType) => {
   const headerSource = {
-    totalViews: props.data.challenge.totalViews,
-    challengeName: props.data.challenge.challengeName,
+    challengeDetail: {
+      views: props.data.challenge.totalViews,
+      name: props.data.challenge.challengeName,
+    },
     players: props.data.challenge.players.map(x => ({
       name: x.name,
       profilePicture: x.profilePicture,
@@ -43,7 +45,7 @@ const WallChallengeDetail = (props: propsType) => {
   return (
     <View>
       <Card style={styles.card}>
-        <Header data={headerSource} />
+        <Header players={headerSource.players} challengeDetail={headerSource.challengeDetail} />
         <Body style={styles.body} sources={bodySources} />
       </Card>
     </View>

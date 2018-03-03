@@ -5,27 +5,27 @@ import { Text, View, StyleSheet } from 'react-native';
 import { ButtonGradient, ProfilePicture } from '../common';
 
 type propsType = {
-  data: {
-    totalViews: number,
-    challengeName: string,
-    players: Array<{
-      profilePicture: string,
-      name: string,
-    }>,
+  players: Array<{
+    profilePicture: string,
+    name: string,
+  }>,
+  challengeDetail: {
+    views: number,
+    name: string,
   },
 };
 
 const Header = (props: propsType) => {
-  const { data } = props;
+  const { players, challengeDetail } = props;
 
   return (
     <View style={styles.container}>
-      <ProfilePicture source={data[0].profilePicture} userName={data[0].name} size="S" />
+      <ProfilePicture source={players[0].profilePicture} userName={players[0].name} size="S" />
       <View style={styles.middel}>
-        <ButtonGradient>{data.totalViews}</ButtonGradient>
-        <Text style={styles.challengeName}>{data.challengeName}</Text>
+        <ButtonGradient>{challengeDetail.views}</ButtonGradient>
+        <Text style={styles.challengeName}>{challengeDetail.name}</Text>
       </View>
-      <ProfilePicture source={data[1].profilePicture} userName={data[1].name} size="S" />
+      <ProfilePicture source={players[1].profilePicture} userName={players[1].name} size="S" />
     </View>
   );
 };
