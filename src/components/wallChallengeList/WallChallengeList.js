@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 
 import WallChallengeDetail from './WallChallengeDetail';
 
-const PictureProfile1 = '../../../img/devTest/PictureProfile1.jpg';
-const PictureProfile2 = '../../../img/devTest/PictureProfile2.jpg';
-const ChallDescription1 = '../../../img/devTest/ChallDescription1.jpg';
-const ChallDescription2 = '../../../img/devTest/ChallDescription2.jpg';
+import PictureProfile1 from '../../../img/devTest/PictureProfile1.jpg';
+import PictureProfile2 from '../../../img/devTest/PictureProfile2.jpg';
+import ChallDescription1 from '../../../img/devTest/ChallDescription1.jpg';
+import ChallDescription2 from '../../../img/devTest/ChallDescription2.jpg';
 
 type playerType = {
   name: string,

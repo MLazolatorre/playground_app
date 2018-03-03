@@ -1,23 +1,24 @@
+// @flow
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-class ButtonGradient extends Component {
-  constructor(props) {
-    super(props);
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 
-    this.buttonColors = ['#9c47ff', '#41d1c3'];
-  }
+type propsType = {
+  style: StyleObj,
+  children: string,
+};
+
+class ButtonGradient extends Component<propsType> {
+  buttonColors: Array<string> = ['#9c47ff', '#41d1c3'];
 
   render() {
     return (
       <View>
         <LinearGradient
-          start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }}
+          start={{ x: 0, y: 0.5 }}
+          end={{ x: 1, y: 0.5 }}
           colors={this.buttonColors}
           style={[styles.button, this.props.style]}
         >
@@ -42,4 +43,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { ButtonGradient };
+export default ButtonGradient;
