@@ -40,23 +40,25 @@ const players: Array<APlayerType> = [
 ];
 
 class WallCallengeList extends Component<{}> {
-  keyExtractor(item: Array<APlayerType>, index: number): string {
+  keyExtractor(item: challengeType, index: number): string {
     return `${index}`;
   }
 
-  renderItem(info: { item: challengeType, index: number, separators: any }) {
+  renderItem(info: { item: challengeType }) {
     return <WallChallengeDetail data={info.item} />;
   }
 
   render() {
-    let data = [];
+    let data: Array<challengeType> = [];
 
     for (let i = 0; i < 30; i++) {
       data = [
         ...data,
         {
-          players,
-          challengeName: 'Deviens President',
+          challenge: {
+            players,
+            challengeName: 'Deviens President',
+          },
         },
       ];
     }
