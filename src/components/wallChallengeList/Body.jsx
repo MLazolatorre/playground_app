@@ -5,29 +5,29 @@ import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes
 
 import { DecorationVideoPicture } from '../common';
 
-type sourcesType = {
+type dataType = {
   challengeImageDescription: string,
   nbLikes: number,
 };
 
 type propsType = {
-  sources: Array<sourcesType>,
+  data: Array<dataType>,
   style: StyleObj,
 };
 
 const Body = (props: propsType) => {
-  const { sources, style } = props;
+  const { data, style } = props;
 
   return (
     <View style={[styles.container, style]}>
       <DecorationVideoPicture
-        imgSource={sources[0].challengeImageDescription}
-        nbLikes={sources[0].nbLikes}
+        imgSource={data[0].challengeImageDescription}
+        nbLikes={data[0].nbLikes}
         size="L"
       />
       <DecorationVideoPicture
-        imgSource={sources[1].challengeImageDescription}
-        nbLikes={sources[1].nbLikes}
+        imgSource={data[1].challengeImageDescription}
+        nbLikes={data[1].nbLikes}
         size="L"
       />
     </View>

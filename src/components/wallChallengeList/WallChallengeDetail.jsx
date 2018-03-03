@@ -6,7 +6,7 @@ import Body from './Body';
 import Header from './Header';
 import { Card } from '../common';
 
-type APlayerType = {
+type playerType = {
   name: string,
   profilePicture: string,
   nbLikes: number,
@@ -15,7 +15,7 @@ type APlayerType = {
 
 type challengeType = {
   challenge: {
-    players: Array<APlayerType>,
+    players: Array<playerType>,
     challengeName: string,
     totalViews: number,
   },
@@ -46,7 +46,7 @@ const WallChallengeDetail = (props: propsType) => {
     <View>
       <Card style={styles.card}>
         <Header players={headerSource.players} challengeDetail={headerSource.challengeDetail} />
-        <Body style={styles.body} sources={bodySources} />
+        <Body style={styles.body} data={bodySources} />
       </Card>
     </View>
   );

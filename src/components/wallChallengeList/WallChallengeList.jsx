@@ -10,7 +10,7 @@ const PictureProfile2 = '../../../img/devTest/PictureProfile2.jpg';
 const ChallDescription1 = '../../../img/devTest/ChallDescription1.jpg';
 const ChallDescription2 = '../../../img/devTest/ChallDescription2.jpg';
 
-type APlayerType = {
+type playerType = {
   name: string,
   profilePicture: string,
   nbLikes: number,
@@ -19,13 +19,13 @@ type APlayerType = {
 
 type challengeType = {
   challenge: {
-    players: Array<APlayerType>,
+    players: Array<playerType>,
     challengeName: string,
     totalViews: number,
   },
 };
 
-const players: Array<APlayerType> = [
+const players: Array<playerType> = [
   {
     name: 'Méloch',
     profilePicture: PictureProfile1,
