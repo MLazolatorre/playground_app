@@ -3,21 +3,28 @@ import React, { Component } from 'react';
 import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
 
-import WallCallengeDetail from './WallChallengeDetail';
+import WallChallengeDetail from './WallChallengeDetail';
 
 const PictureProfile1 = '../../../img/devTest/PictureProfile1.jpg';
 const PictureProfile2 = '../../../img/devTest/PictureProfile2.jpg';
 const ChallDescription1 = '../../../img/devTest/ChallDescription1.jpg';
 const ChallDescription2 = '../../../img/devTest/ChallDescription2.jpg';
 
-type playerType = Array<{
+type APlayerType = {
   name: string,
   profilePicture: string,
   nbLikes: number,
   challengeImageDescription: string,
-}>;
+};
 
-const players: playerType = [
+type challengeType = {
+  challenge: {
+    players: Array<APlayerType>,
+    challengeName: string,
+  },
+};
+
+const players: Array<APlayerType> = [
   {
     name: 'Méloch',
     profilePicture: PictureProfile1,
@@ -33,19 +40,25 @@ const players: playerType = [
 ];
 
 class WallCallengeList extends Component<{}> {
-  keyExtractor(item: playerType, index: number) {
+  keyExtractor(item: Array<APlayerType>, index: number): string {
     return `${index}`;
   }
 
-  renderItem(param: { item: playerType }) {
-    return <WallCallengeDetail data={param.item} />;
+  renderItem(info: { item: challengeType, index: number, separators: any }) {
+    return <WallChallengeDetail data={info.item} />;
   }
 
   render() {
     let data = [];
 
     for (let i = 0; i < 30; i++) {
-      data = [...data, players];
+      data = [
+        ...data,
+        {
+          players,
+          challengeName: 'Deviens President',
+        },
+      ];
     }
 
     return (
