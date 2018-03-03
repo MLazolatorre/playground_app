@@ -17,6 +17,7 @@ type challengeType = {
   challenge: {
     players: Array<APlayerType>,
     challengeName: string,
+    totalViews: number,
   },
 };
 
@@ -26,6 +27,7 @@ type propsType = {
 
 const WallChallengeDetail = (props: propsType) => {
   const headerSource = {
+    totalViews: props.data.challenge.totalViews,
     challengeName: props.data.challenge.challengeName,
     players: props.data.challenge.players.map(x => ({
       name: x.name,

@@ -21,6 +21,7 @@ type challengeType = {
   challenge: {
     players: Array<APlayerType>,
     challengeName: string,
+    totalViews: number,
   },
 };
 
@@ -57,6 +58,7 @@ class WallCallengeList extends Component<{}> {
         {
           challenge: {
             players,
+            totalViews: 123456,
             challengeName: 'Deviens President',
           },
         },

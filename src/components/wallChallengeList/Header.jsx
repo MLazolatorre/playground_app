@@ -6,6 +6,7 @@ import { ButtonGradient, ProfilePicture } from '../common';
 
 type propsType = {
   data: {
+    totalViews: number,
     challengeName: string,
     players: Array<{
       profilePicture: string,
@@ -21,7 +22,7 @@ const Header = (props: propsType) => {
     <View style={styles.container}>
       <ProfilePicture source={data[0].profilePicture} userName={data[0].name} size="S" />
       <View style={styles.middel}>
-        <ButtonGradient>Clic ici!</ButtonGradient>
+        <ButtonGradient>{data.totalViews}</ButtonGradient>
         <Text style={styles.challengeName}>{data.challengeName}</Text>
       </View>
       <ProfilePicture source={data[1].profilePicture} userName={data[1].name} size="S" />
