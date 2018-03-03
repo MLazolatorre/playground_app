@@ -48,6 +48,7 @@
     ],
     "flowtype/use-flow-type": 1,
     "flowtype/valid-syntax": 1,
+    "react/jsx-filename-extension": "js",
     "class-methods-use-this": "off",
     "no-plusplus": "off",
     "no-use-before-define": ["error", { "variables": false }]
