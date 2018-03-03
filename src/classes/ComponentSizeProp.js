@@ -1,9 +1,16 @@
+// @flow
+type borderStizeType = {
+  height: number,
+  width: number,
+};
+
+type stringSizeType = 'S' | 'M' | 'L' | 'XL';
+
 export default class ComponentSizeProp {
-  /**
-   * [constructor description]
-   * @param {number | string} sizeObjOrString         [description]
-   */
-  constructor(sizeObjOrString) {
+  component: borderStizeType;
+  border: borderStizeType;
+
+  constructor(sizeObjOrString: stringSizeType | borderStizeType) {
     // if sizeObjOrString is a string we set the size with the predefined value
     if (typeof sizeObjOrString === 'string') {
       this.setPictureSizeFromSize(sizeObjOrString);
@@ -28,10 +35,10 @@ export default class ComponentSizeProp {
 
   /**
    * Get an object with the height and the width value
-   * @param {number} height
+   * @param {} height
    * @param {number | null} width if null it's a square
    */
-  JSONSize(height, width = height) {
+  JSONSize(height: number, width: number = height): borderStizeType {
     return {
       height,
       width,
@@ -42,7 +49,7 @@ export default class ComponentSizeProp {
    * Get the component JSON size, usable as a style object
    * @return {Object: {height: number, width: number }} the style usable object
    */
-  get size() {
+  get size(): borderStizeType {
     return this.JSONSize(this.component.height, this.component.width);
   }
 
@@ -50,15 +57,14 @@ export default class ComponentSizeProp {
    * Get the border component JSON size, usable as a style object
    * @return {Object: {height: number, width: number }} the style usable object
    */
-  get borderSize() {
+  get borderSize(): borderStizeType {
     return this.JSONSize(this.border.height, this.border.width);
   }
 
   /**
    * set the component size from a string as : S, M, L, XL
-   * @param {[type]} size [description]
    */
-  setPictureSizeFromSize(size) {
+  setPictureSizeFromSize(size: stringSizeType) {
     switch (size) {
       case 'S':
         this.component = this.JSONSize(50);
