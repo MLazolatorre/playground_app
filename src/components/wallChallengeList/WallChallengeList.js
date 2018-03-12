@@ -12,17 +12,15 @@ import ChallDescription2 from '../../../img/devTest/ChallDescription2.jpg';
 
 type playerType = {
   name: string,
-  profilePicture: string,
+  profilePicture: any,
+  challengeImageDescription: any,
   nbLikes: number,
-  challengeImageDescription: string,
 };
 
 type challengeType = {
-  challenge: {
-    players: Array<playerType>,
-    challengeName: string,
-    totalViews: number,
-  },
+  players: Array<playerType>,
+  challengeName: string,
+  totalViews: number,
 };
 
 const players: Array<playerType> = [
@@ -56,11 +54,9 @@ class WallCallengeList extends Component<{}> {
       data = [
         ...data,
         {
-          challenge: {
-            players,
-            totalViews: 123456,
-            challengeName: 'Deviens President',
-          },
+          players,
+          totalViews: 123456,
+          challengeName: 'Deviens President',
         },
       ];
     }

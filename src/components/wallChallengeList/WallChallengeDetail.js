@@ -14,11 +14,9 @@ type playerType = {
 };
 
 type challengeType = {
-  challenge: {
-    players: Array<playerType>,
-    challengeName: string,
-    totalViews: number,
-  },
+  players: Array<playerType>,
+  challengeName: string,
+  totalViews: number,
 };
 
 type propsType = {
@@ -28,16 +26,16 @@ type propsType = {
 const WallChallengeDetail = (props: propsType) => {
   const headerSource = {
     challengeDetail: {
-      views: props.data.challenge.totalViews,
-      name: props.data.challenge.challengeName,
+      views: props.data.totalViews,
+      name: props.data.challengeName,
     },
-    players: props.data.challenge.players.map(x => ({
+    players: props.data.players.map(x => ({
       name: x.name,
       profilePicture: x.profilePicture,
     })),
   };
 
-  const bodySources = props.data.challenge.players.map(x => ({
+  const bodySources = props.data.players.map(x => ({
     nbLikes: x.nbLikes,
     challengeImageDescription: x.challengeImageDescription,
   }));
