@@ -4,24 +4,9 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import { ReduxThunk } from 'redux-thunk';
-
-import Reducers from './reducers';
+import React from 'react';
 import WallChallengeList from './components/wallChallengeList/WallChallengeList';
 
-export default class App extends Component<{}> {
-  render() {
-    const store = createStore(Reducers, {}, applyMiddleware(ReduxThunk));
-
-    return (
-      <Provider store={store}>
-        <WallChallengeList />
-      </Provider>
-    );
-  }
+export default function App() {
+  return <WallChallengeList />;
 }
-
-export default App;

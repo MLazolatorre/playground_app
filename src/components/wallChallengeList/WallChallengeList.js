@@ -1,7 +1,6 @@
 // @flow
 import React, { Component } from 'react';
 import { FlatList, View } from 'react-native';
-import { connect } from 'react-redux';
 
 import WallChallengeDetail from './WallChallengeDetail';
 
@@ -69,4 +68,4 @@ class WallCallengeList extends Component<{}> {
   }
 }
 
-export default connect()(WallCallengeList);
+export default WallCallengeList;
